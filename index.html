@@ -10,11 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Barlow+Semi+Condensed:wght@400;500;600&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* soil horizons, lightest at the surface */
-    --topsoil: #2e241e;
-    --subsoil: #261d18;
-    --clay:    #1f1813;
-    --bedrock: #19130f;
+    /* greens, lightest at the top of the page and darker going down */
+    --topsoil: #2a362a;
+    --subsoil: #202a20;
+    --clay:    #1c251c;
+    --bedrock: #161d16;
 
     /* back of the card */
     --canopy: #2a362a;
@@ -170,7 +170,7 @@
     background: var(--subsoil); border: 1px solid rgba(236,226,212,.18); border-radius: 3px;
     padding: .7em .85em;
   }
-  input::placeholder, textarea::placeholder { color: #7d7064; }
+  input::placeholder, textarea::placeholder { color: #6f7a6a; }
   input:focus, textarea:focus { outline: none; border-color: var(--sage-pale); box-shadow: 0 0 0 3px rgba(179,187,156,.18); }
   textarea { min-height: 110px; resize: vertical; }
   fieldset { border: 0; padding: 0; margin: 0; grid-column: 1 / -1; }
