@@ -473,9 +473,8 @@
 
       status.hidden = false;
       if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        window.location.href = 'sms:' + PHONE + '?&body=' + encodeURIComponent(lines.join('
-'));
-        status.textContent = 'Your text to Jeremy is ready. Hit send in Messages and he'll get back to you within a day.';
+        window.location.href = 'sms:' + PHONE + '?&body=' + encodeURIComponent(lines.join('\n'));
+        status.textContent = "Your text to Jeremy is ready. Hit send in Messages and he'll get back to you within a day.";
       } else {
         status.innerHTML = 'Quote requests go out by text right now. Call or text <a href="tel:' + PHONE + '">214-796-0394</a> with your name and address, and Jeremy will get back to you within a day.';
       }
