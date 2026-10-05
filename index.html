@@ -165,7 +165,7 @@
   .field.full { grid-column: 1 / -1; }
   label, legend { font-family: var(--label); font-weight: 500; font-size: 1rem; color: var(--linen); }
   .optional { color: var(--linen-dim); font-weight: 400; }
-  input[type=text], input[type=tel], textarea {
+  input[type=text], input[type=tel], input[type=email], textarea {
     width: 100%; font: inherit; color: var(--linen);
     background: var(--subsoil); border: 1px solid rgba(236,226,212,.18); border-radius: 3px;
     padding: .7em .85em;
@@ -188,6 +188,9 @@
   .form-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 6px; }
   .form-foot p { color: var(--linen-dim); font-size: .95rem; }
   .hp { display: none; }
+  .field-error { font-family: var(--label); font-size: .95rem; color: #e8a184; }
+  input.is-invalid, input.is-invalid:focus { border-color: #e8a184; box-shadow: 0 0 0 3px rgba(232,161,132,.18); }
+  .form-status.is-error { border-left-color: #e8a184; background: rgba(232,161,132,.1); }
   .form-status { grid-column: 1 / -1; padding: 14px 16px; border-left: 3px solid var(--sage); background: rgba(136,148,111,.12); color: var(--linen); }
   .form-status a { color: var(--copper); }
 
@@ -415,45 +418,55 @@
         </div>
       </div>
 
-      <!-- Sends as a pre-filled text for now (GitHub Pages can't receive forms). Netlify attributes kept for when hosting moves there. -->
-      <form id="quote-form" name="quote" method="POST" data-netlify="true" netlify-honeypot="company" action="thanks.html">
-        <input type="hidden" name="form-name" value="quote">
-        <p class="hp"><label>Leave this empty <input name="company"></label></p>
+      <!-- Sends through Web3Forms (test key: goes to the site builder's inbox, not Jeremy's yet) -->
+      <form id="quote-form" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="d1e4f7a2-bde5-4e7f-9334-90ada5ae0593">
+        <input type="hidden" name="subject" value="New quote request (TEST)">
+        <input type="hidden" name="from_name" value="Good Soil - NEW QUOTE">
+        <!-- Web3Forms spam honeypot: bots tick it, people never see it -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <!-- Filled on submit with the ticked services, joined by ", " -->
+        <input type="hidden" name="services" id="services">
 
         <div class="field">
-          <label for="name">Your name</label>
+          <label for="name">Your Name</label>
           <input id="name" name="name" type="text" autocomplete="name" required>
         </div>
         <div class="field">
           <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="214-555-0123" pattern="\d{3}-\d{3}-\d{4}" aria-describedby="phone-error" required>
+          <p class="field-error" id="phone-error" hidden></p>
         </div>
         <div class="field full">
-          <label for="address">Property address</label>
-          <input id="address" name="address" type="text" autocomplete="street-address" required>
+          <label for="address">Property Address <span class="optional">(optional)</span></label>
+          <input id="address" name="address" type="text" autocomplete="street-address">
+        </div>
+        <div class="field full">
+          <label for="email">Email <span class="optional">(optional)</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error">
+          <p class="field-error" id="email-error" hidden></p>
         </div>
 
         <fieldset>
-          <legend>What are you interested in? <span class="optional">(pick any)</span></legend>
+          <legend>What Are You Interested In? <span class="optional">(pick any)</span></legend>
           <div class="chips">
-            <label class="chip"><input type="checkbox" name="services[]" value="Fertilization"><span>Fertilization</span></label>
-            <label class="chip"><input type="checkbox" name="services[]" value="Weed control"><span>Weed control</span></label>
-            <label class="chip"><input type="checkbox" name="services[]" value="Fire ant control"><span>Fire ant control</span></label>
-            <label class="chip"><input type="checkbox" name="services[]" value="Tree & shrub"><span>Tree &amp; shrub</span></label>
-            <label class="chip"><input type="checkbox" name="services[]" value="Insect & disease control"><span>Insect &amp; disease control</span></label>
-            <label class="chip"><input type="checkbox" name="services[]" value="Aeration"><span>Aeration</span></label>
-            <label class="chip"><input type="checkbox" name="services[]" value="Not sure"><span>Not sure yet</span></label>
+            <label class="chip"><input type="checkbox" data-service value="Fertilization"><span>Fertilization</span></label>
+            <label class="chip"><input type="checkbox" data-service value="Weed control"><span>Weed control</span></label>
+            <label class="chip"><input type="checkbox" data-service value="Fire ant control"><span>Fire ant control</span></label>
+            <label class="chip"><input type="checkbox" data-service value="Tree & shrub"><span>Tree &amp; shrub</span></label>
+            <label class="chip"><input type="checkbox" data-service value="Insect & disease control"><span>Insect &amp; disease control</span></label>
+            <label class="chip"><input type="checkbox" data-service value="Aeration"><span>Aeration</span></label>
+            <label class="chip"><input type="checkbox" data-service value="Not sure"><span>Not sure yet</span></label>
           </div>
         </fieldset>
 
         <div class="field full">
-          <label for="notes">Anything we should know? <span class="optional">(optional)</span></label>
+          <label for="notes">Anything We Should Know? <span class="optional">(optional)</span></label>
           <textarea id="notes" name="notes" placeholder="Yard size, problem spots, gate code, best time to reach you…"></textarea>
         </div>
 
         <div class="form-foot">
           <button class="btn btn-solid" type="submit">Request my quote</button>
-          <p>On a phone, this opens a text to Jeremy with your details filled in.</p>
         </div>
         <p class="form-status" id="form-status" role="status" hidden></p>
       </form>
@@ -475,32 +488,111 @@
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Quote form -> pre-filled text message to Jeremy
+  // Quote form -> Web3Forms, with our own field checks and an on-page thank-you
   (function () {
     const form = document.getElementById('quote-form');
     const status = document.getElementById('form-status');
-    const PHONE = '+12147960394';
+    const button = form.querySelector('button[type=submit]');
+    const phone = document.getElementById('phone');
+    const email = document.getElementById('email');
+
+    // Format the phone as 214-796-0394 while typing, keeping the cursor where it was
+    phone.addEventListener('input', function () {
+      const digitsBeforeCaret = phone.value.slice(0, phone.selectionStart).replace(/\D/g, '').length;
+      let digits = phone.value.replace(/\D/g, '');
+      if (digits.length === 11 && digits[0] === '1') digits = digits.slice(1); // autofilled +1
+      digits = digits.slice(0, 10);
+
+      let formatted = digits.slice(0, 3);
+      if (digits.length > 3) formatted += '-' + digits.slice(3, 6);
+      if (digits.length > 6) formatted += '-' + digits.slice(6);
+      phone.value = formatted;
+
+      let pos = 0, seen = 0;
+      while (pos < formatted.length && seen < digitsBeforeCaret) {
+        if (/\d/.test(formatted[pos])) seen++;
+        pos++;
+      }
+      phone.setSelectionRange(pos, pos);
+    });
+
+    // Our own error message under a field, instead of the browser popup.
+    // getMessage(submitting) returns the error text, or '' when the field is fine.
+    function addCheck(input, getMessage) {
+      const error = document.getElementById(input.id + '-error');
+      function check(submitting) {
+        const message = getMessage(submitting === true);
+        error.textContent = message;
+        error.hidden = !message;
+        input.classList.toggle('is-invalid', !!message);
+      }
+      input.addEventListener('blur', check);
+      input.addEventListener('input', function () {
+        if (input.classList.contains('is-invalid')) check(); // clear the error as soon as it's fixed
+      });
+      input.addEventListener('invalid', function (e) {
+        e.preventDefault(); // hide the browser popup; our message shows instead
+        check(true);
+        if (form.querySelector(':invalid') === input) input.focus(); // don't steal focus from an earlier problem field
+      });
+    }
+
+    // Phone: needs all 10 digits. Only complain about an empty box when they try to send.
+    addCheck(phone, function (submitting) {
+      const digits = phone.value.replace(/\D/g, '');
+      if (!digits) return submitting ? 'Please enter your phone number.' : '';
+      if (digits.length < 10) return 'Please enter a 10-digit phone number.';
+      return '';
+    });
+
+    // Email is optional, but if they type one it needs to look real
+    addCheck(email, function () {
+      const value = email.value.trim();
+      if (value && value.indexOf('@') === -1) return 'Please include an @ in the email address.';
+      if (value && !email.validity.valid) return "That email doesn't look right. Check it, or leave it blank.";
+      return '';
+    });
+
+    function showStatus(html, isError) {
+      status.innerHTML = html;
+      status.classList.toggle('is-error', isError);
+      status.hidden = false;
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (form.company.value) return; // bot filled the hidden field
-      const d = new FormData(form);
-      const services = d.getAll('services[]');
-      const lines = [
-        'Quote request from the Good Soil website',
-        'Name: ' + d.get('name'),
-        'Phone: ' + d.get('phone'),
-        'Address: ' + d.get('address')
-      ];
-      if (services.length) lines.push('Interested in: ' + services.join(', '));
-      if (d.get('notes').trim()) lines.push('Notes: ' + d.get('notes').trim());
+      if (form.botcheck.checked) return; // bot ticked the hidden box
 
-      status.hidden = false;
-      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        window.location.href = 'sms:' + PHONE + '?&body=' + encodeURIComponent(lines.join('\n'));
-        status.textContent = "Your text to Jeremy is ready. Hit send in Messages and he'll get back to you within a day.";
-      } else {
-        status.innerHTML = 'Quote requests go out by text right now. Call or text <a href="tel:' + PHONE + '">214-796-0394</a> with your name and address, and Jeremy will get back to you within a day.';
-      }
+      // Web3Forms joins repeated checkboxes with a bare ",", so send one field we join ourselves
+      const picked = Array.from(form.querySelectorAll('[data-service]:checked'), function (box) { return box.value; });
+      const services = document.getElementById('services');
+      services.value = picked.join(', ');
+      services.disabled = picked.length === 0; // leave the line out of the email if nothing was ticked
+
+      const data = Object.fromEntries(new FormData(form));
+      services.disabled = false;
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      status.hidden = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (result) {
+          if (!result.success) throw new Error(result.message);
+          form.reset();
+          showStatus("Thanks! Your quote request is on its way. Jeremy will get back to you within a day.", false);
+        })
+        .catch(function () {
+          showStatus('Sorry, that didn\'t go through. Please call or text <a href="tel:+12147960394">214-796-0394</a> instead.', true);
+        })
+        .finally(function () {
+          button.disabled = false;
+          button.textContent = 'Request my quote';
+        });
     });
   })();
 </script>
