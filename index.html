@@ -220,7 +220,9 @@
     .owner { display: none; } /* stacked layout: Jeremy's card would sit right on top of the form */
   }
   @media (max-width: 520px) {
-    .head-call span { display: none; }
+    /* "Call Or Text" moves under the number, small */
+    .head-call { display: flex; flex-direction: column-reverse; align-items: flex-end; line-height: 1.15; }
+    .head-call span { font-size: .72rem; letter-spacing: .04em; margin-top: 2px; }
     .brand { gap: 10px; }
     .brand svg { height: 50px; }
     .brand-name { font-size: 1.2rem; letter-spacing: .1em; }
