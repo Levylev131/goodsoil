@@ -568,11 +568,9 @@
       // Web3Forms joins repeated checkboxes with a bare ",", so send one field we join ourselves
       const picked = Array.from(form.querySelectorAll('[data-service]:checked'), function (box) { return box.value; });
       const services = document.getElementById('services');
-      services.value = picked.join(', ');
-      services.disabled = picked.length === 0; // leave the line out of the email if nothing was ticked
+      services.value = picked.length ? picked.join(', ') : 'Not Sure Yet'; // nothing ticked counts as not sure
 
       const data = Object.fromEntries(new FormData(form));
-      services.disabled = false;
       button.disabled = true;
       button.textContent = 'Sending…';
       status.hidden = true;
