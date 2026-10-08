@@ -79,10 +79,24 @@
   .brand { display: flex; align-items: center; gap: clamp(12px, 1.8vw, 20px); text-decoration: none; }
   .brand svg { height: clamp(56px, 7vw, 84px); width: auto; flex: none; }
   .brand-name { font-family: var(--display); font-size: clamp(1.4rem, 2.6vw, 2rem); letter-spacing: .14em; color: var(--copper); line-height: 1; }
-  .brand-sub { font-family: var(--label); font-size: clamp(.8rem, 1.2vw, .98rem); letter-spacing: .12em; color: var(--sage); margin-top: 8px; }
-  .head-call { font-family: var(--label); font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: var(--linen); text-decoration: none; white-space: nowrap; }
+  .brand-sub { font-family: var(--label); font-size: clamp(.86rem, 1.2vw, .98rem); letter-spacing: .12em; color: var(--sage); margin-top: 8px; white-space: nowrap; }
+  .head-call { font-family: var(--label); font-weight: 600; font-size: clamp(.92rem, 1.6vw, 1.3rem); color: var(--linen); text-decoration: none; white-space: nowrap; }
   .head-call span { color: var(--linen-dim); font-weight: 500; }
   .head-call:hover { color: var(--copper); }
+  .head-call i { font-style: normal; }
+  .head-contact { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .head-email { font-family: var(--label); font-weight: 500; font-size: clamp(.92rem, 1.6vw, 1.3rem); color: var(--linen); text-decoration: none; white-space: nowrap; }
+  .head-email span { color: var(--linen-dim); }
+  .head-email:hover { color: var(--copper); }
+  /* phone-style header: the script adds .compact only when the full header won't fit on one row (phones always get it) */
+    /* "Call Or Text" moves under the number, small */
+  .site-head.compact .head-call { display: flex; flex-direction: column-reverse; align-items: center; line-height: 1.15; }
+  .site-head.compact .head-call span { font-size: .72rem; letter-spacing: .04em; margin-top: 2px; }
+  .site-head.compact .head-call i, .site-head.compact .head-email { display: none; } /* phones: no room for the email line */
+  .site-head.compact .brand { gap: 10px; }
+  .site-head.compact .brand svg { height: 50px; }
+  .site-head.compact .brand-name { font-size: 1.2rem; letter-spacing: .1em; }
+  .site-head.compact .brand-sub { font-size: .66rem; letter-spacing: .02em; margin-top: 5px; white-space: nowrap; }
 
   /* ---------- hero ---------- */
   .hero { padding: clamp(24px, 5vw, 64px) 0 clamp(64px, 9vw, 120px); position: relative; overflow: hidden; }
@@ -125,9 +139,8 @@
   .section-head p { color: var(--linen-dim); max-width: 44ch; }
 
   /* ---------- services ---------- */
-  .services { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; }
+  .services { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; border-top: 1px solid var(--line); }
   .services li { display: grid; grid-template-columns: 56px 1fr; gap: 18px; padding: 28px 0; border-bottom: 1px solid var(--line); }
-  .services li:nth-child(-n+2) { border-top: 1px solid var(--line); }
   .services .badge { width: 56px; height: 56px; }
   .badge > circle { fill: none; stroke: var(--sage); stroke-width: 1.3; }
   .services p { color: var(--linen-dim); margin-top: .45rem; max-width: 42ch; }
@@ -211,14 +224,16 @@
   footer p { color: var(--linen-dim); font-size: .95rem; }
 
   /* ---------- responsive ---------- */
-  @media (max-width: 860px) {
+  @media (max-width: 940px) {
+    /* hero stacks a bit before the rest, while both buttons still fit side by side */
     .hero .wrap { grid-template-columns: 1fr; }
-    .hero { background: linear-gradient(180deg, rgba(42,54,42,.8) 0%, rgba(42,54,42,.7) 55%, rgba(42,54,42,.55) 85%, var(--canopy) 100%), url("hero-lawn.jpg?v=3") center bottom / auto 120% no-repeat; }
+    /* dark glow behind the heading, text and buttons so they read clearly over the grass */
+    .hero { background: radial-gradient(ellipse 75% 42% at 50% 66%, rgba(42,54,42,.82) 0%, rgba(42,54,42,.55) 55%, rgba(42,54,42,0) 100%), linear-gradient(180deg, rgba(42,54,42,.8) 0%, rgba(42,54,42,.72) 45%, rgba(42,54,42,.78) 85%, var(--canopy) 100%), url("hero-lawn.jpg?v=3") center bottom / auto 120% no-repeat; }
     .mark { order: -1; max-width: 340px; margin-bottom: -8px; }
-
+  }
+  @media (max-width: 860px) {
     .section-head { grid-template-columns: 1fr; }
     .services { grid-template-columns: 1fr; }
-    .services li:nth-child(2) { border-top: 0; }
     .steps { grid-template-columns: 1fr; gap: 32px; }
     .steps li { padding-top: 0; padding-left: 64px; }
     .steps li::after { display: none; }
@@ -227,14 +242,13 @@
     .contact .wrap { grid-template-columns: 1fr; }
     .owner { display: none; } /* stacked layout: Jeremy's card would sit right on top of the form */
   }
+  @media (min-width: 521px) and (max-width: 940px) {
+    /* stacked hero on tablets / narrow windows: centre the text under the logo so the right side isn't empty */
+    .hero .wrap > div:first-child { text-align: center; }
+    .hero-lede { margin-left: auto; margin-right: auto; }
+    .hero-actions, .promises { justify-content: center; }
+  }
   @media (max-width: 520px) {
-    /* "Call Or Text" moves under the number, small */
-    .head-call { display: flex; flex-direction: column-reverse; align-items: flex-end; line-height: 1.15; }
-    .head-call span { font-size: .72rem; letter-spacing: .04em; margin-top: 2px; }
-    .brand { gap: 10px; }
-    .brand svg { height: 50px; }
-    .brand-name { font-size: 1.2rem; letter-spacing: .1em; }
-    .brand-sub { font-size: .66rem; letter-spacing: .02em; margin-top: 5px; white-space: nowrap; }
     form { grid-template-columns: 1fr; }
     .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
   }
@@ -279,9 +293,31 @@
         <div class="brand-sub">Lawn Care &amp; Turf Management</div>
       </div>
     </a>
-    <a class="head-call" href="tel:+12147960394"><span>Call Or Text </span>214-796-0394</a>
+    <div class="head-contact">
+      <a class="head-call" href="tel:+12147960394"><span>Call Or Text<i>:</i> </span>214-796-0394</a>
+      <!-- TODO: Jeremy's real email -->
+      <a class="head-email" href="mailto:jeremy@goodsoil.example"><span>Email: </span>jeremy@goodsoil.example</a>
+    </div>
   </div>
 </header>
+<script>
+  // Switch the header to its phone style only once the full version no longer fits on one row
+  (function () {
+    const head = document.querySelector('.site-head');
+    const row = head.querySelector('.wrap');
+    function fit() {
+      head.classList.remove('compact');
+      const css = getComputedStyle(row);
+      const room = row.clientWidth - parseFloat(css.paddingLeft) - parseFloat(css.paddingRight);
+      let need = parseFloat(css.columnGap) || 0;
+      for (const el of row.children) need += el.getBoundingClientRect().width;
+      if (need > room || window.innerWidth <= 520) head.classList.add('compact');
+    }
+    fit();
+    window.addEventListener('resize', fit);
+    if (document.fonts) document.fonts.ready.then(fit);
+  })();
+</script>
 
 <main id="top">
   <section class="hero">
