@@ -86,6 +86,13 @@
 
   /* ---------- hero ---------- */
   .hero { padding: clamp(24px, 5vw, 64px) 0 clamp(64px, 9vw, 120px); position: relative; overflow: hidden; }
+  /* hero background photo (decorative, not a customer result); delete this rule to remove it */
+  .hero {
+    background:
+      linear-gradient(90deg, rgba(42,54,42,.94) 0%, rgba(42,54,42,.86) 50%, rgba(42,54,42,.72) 100%),
+      linear-gradient(180deg, var(--canopy) 0%, rgba(42,54,42,0) 18%, rgba(42,54,42,0) 82%, var(--canopy) 100%),
+      url("hero-lawn.jpg") center 60% / cover no-repeat;
+  }
   .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(24px, 4vw, 56px); }
   .hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.9rem); color: var(--linen); }
   .hero-lede { font-size: clamp(1.1rem, 1.6vw, 1.25rem); color: var(--linen-dim); max-width: 36ch; margin-top: 1.4rem; }
@@ -206,6 +213,7 @@
   /* ---------- responsive ---------- */
   @media (max-width: 860px) {
     .hero .wrap { grid-template-columns: 1fr; }
+    .hero { background: linear-gradient(rgba(42,54,42,.88), rgba(42,54,42,.88)), url("hero-lawn.jpg") center 60% / cover no-repeat; }
     .mark { order: -1; max-width: 340px; margin-bottom: -8px; }
 
     .section-head { grid-template-columns: 1fr; }
