@@ -75,6 +75,7 @@
 
   /* ---------- header ---------- */
   .site-head { padding: clamp(18px, 3vw, 32px) 0; }
+  .site-head:not(.compact) { padding-top: clamp(14px, 1.8vw, 22px); } /* computers: a little less space above the header */
   .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .brand { display: flex; align-items: center; gap: clamp(12px, 1.8vw, 20px); text-decoration: none; }
   .brand svg { height: clamp(56px, 7vw, 84px); width: auto; flex: none; }
