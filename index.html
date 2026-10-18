@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- TEST copy: keep search engines away. REMOVE at launch on the real domain. -->
-<meta name="robots" content="noindex">
+<!-- The real site. Copies (levihannon.com/goodsoil, goodsoil.pages.dev, www) point Google here. -->
+<link rel="canonical" href="https://goodsoiltexas.com/">
 <title>Good Soil Lawn Care | Dallas</title>
 <meta name="description" content="Good Soil — lawn care and turf management in Dallas, TX. Fertilization, weed control, fire ant control, tree and shrub care, insect and disease control, and aeration. Licensed and insured, no contracts. Call Jeremy at 214-796-0394.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -318,6 +318,7 @@
     }
     fit();
     window.addEventListener('resize', fit);
+    window.addEventListener('load', fit); // re-measure after Cloudflare swaps the hidden emails back in
     if (document.fonts) document.fonts.ready.then(fit);
   })();
 </script>
