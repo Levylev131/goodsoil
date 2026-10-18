@@ -614,6 +614,12 @@
       e.preventDefault();
       if (form.botcheck.checked) return; // bot ticked the hidden box
 
+      // Only goodsoiltexas.com sends to Jeremy; the test copies send to Levi's test inbox
+      if (!/(^|\.)goodsoiltexas\.com$/.test(location.hostname)) {
+        form.access_key.value = 'd1e4f7a2-bde5-4e7f-9334-90ada5ae0593';
+        form.subject.value = 'New Quote Request (TEST)';
+      }
+
       // Web3Forms joins repeated checkboxes with a bare ",", so send one field we join ourselves
       const picked = Array.from(form.querySelectorAll('[data-service]:checked'), function (box) { return box.value; });
       const services = document.getElementById('services-field');
