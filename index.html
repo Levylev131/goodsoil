@@ -285,8 +285,9 @@
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
   footer p { color: var(--linen-dim); font-size: .95rem; }
   /* same 14 cities as the Google profile and the business info in <head> */
-  footer .areas { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 4px 5px; list-style: none; margin: 0; padding: 0; opacity: .6; }
-  footer .areas li { font-size: .64rem; line-height: 1; color: var(--sage); padding: 3px 7px; border: 1px solid rgba(136,148,111,.45); border-radius: 999px; }
+  footer .areas { flex-basis: 100%; display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; opacity: .5; }
+  footer .areas li { font-size: .6rem; line-height: 1.6; color: var(--sage); }
+  footer .areas li + li::before { content: "·"; margin: 0 .5em; }
 
   /* ---------- responsive ---------- */
   @media (max-width: 940px) {
