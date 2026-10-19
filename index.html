@@ -285,7 +285,10 @@
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
   footer p { color: var(--linen-dim); font-size: .95rem; }
   /* same 14 cities as the Google profile and the business info in <head> */
-  footer .areas { flex-basis: 100%; font-size: .78rem; color: var(--sage); opacity: .6; line-height: 1.6; }
+  footer .areas { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; opacity: .6; }
+  footer .areas p { font-family: var(--label); font-size: .74rem; letter-spacing: .08em; color: var(--sage); margin-right: 4px; }
+  footer .areas ul { display: contents; list-style: none; }
+  footer .areas li { font-size: .74rem; line-height: 1; color: var(--sage); padding: 5px 10px; border: 1px solid rgba(136,148,111,.45); border-radius: 999px; }
 
   /* ---------- responsive ---------- */
   @media (max-width: 940px) {
@@ -593,7 +596,13 @@
   <div class="wrap">
     <p>Good Soil Lawn Care &amp; Turf Management, Dallas, TX</p>
     <p><a href="tel:+12147960394">214-796-0394</a> &nbsp;/&nbsp; <a href="mailto:goodsoil19x@gmail.com">goodsoil19x@gmail.com</a> &nbsp;/&nbsp; Licensed &amp; Insured &nbsp;/&nbsp; &copy; <span id="yr">2026</span></p>
-    <p class="areas">Service Areas: Dallas, Fate, Garland, Heath, Lavon, Mesquite, Plano, Richardson, Rockwall, Rowlett, Royse City, Sachse, Sunnyvale and Wylie, TX</p>
+    <div class="areas">
+      <p>Service Areas:</p>
+      <ul>
+        <li>Dallas</li><li>Fate</li><li>Garland</li><li>Heath</li><li>Lavon</li><li>Mesquite</li><li>Plano</li>
+        <li>Richardson</li><li>Rockwall</li><li>Rowlett</li><li>Royse City</li><li>Sachse</li><li>Sunnyvale</li><li>Wylie</li>
+      </ul>
+    </div>
   </div>
 </footer>
 
