@@ -149,6 +149,16 @@
   .head-email { font-family: var(--label); font-weight: 500; font-size: clamp(.92rem, 1.6vw, 1.3rem); color: var(--linen); text-decoration: none; white-space: nowrap; }
   .head-email span { color: var(--linen-dim); }
   .head-email:hover { color: var(--copper); }
+  /* About link: its own button beside the contact lines on computers; a small line under the number in the phone-style header.
+     margin-left:auto parks it next to the contact lines; padding-right (not margin) so the fit script counts the gap */
+  .head-nav { margin-left: auto; padding-right: clamp(14px, 2.4vw, 32px); }
+  .head-nav a, .head-about-sm { font-family: var(--label); font-weight: 600; color: var(--linen); text-decoration: none; white-space: nowrap; }
+  .head-nav a { display: inline-block; font-size: clamp(.92rem, 1.4vw, 1.15rem); letter-spacing: .04em; padding: .35em 1em; border: 1px solid var(--line); border-radius: 3px; }
+  .head-nav a:hover, .head-about-sm:hover { color: var(--copper); border-color: var(--copper); }
+  .head-nav a[aria-current] { color: var(--copper); }
+  .head-about-sm { display: none; }
+  .site-head.compact .head-nav { display: none; }
+  .site-head.compact .head-about-sm { display: block; align-self: center; font-size: .72rem; letter-spacing: .04em; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line); margin-top: 2px; }
   /* phone-style header: the script adds .compact only when the full header won't fit on one row (phones always get it) */
     /* "Call Or Text" moves under the number, small */
   .site-head.compact { border-top: 1px solid var(--line); }
@@ -286,6 +296,8 @@
   footer p { color: var(--linen-dim); font-size: .9rem; line-height: 1.5; }
   footer .group { white-space: nowrap; }
   footer .sep { color: var(--wheat); opacity: .55; margin: 0 .7em; font-size: .8em; }
+  footer .pages a { font-family: var(--label); font-weight: 600; letter-spacing: .06em; color: var(--linen); text-decoration: none; }
+  footer .pages a:hover, footer .pages a[aria-current] { color: var(--copper); }
   /* phones: phone + email on one line, Licensed & Insured + year on the next, no stray dot between */
   @media (max-width: 640px) {
     footer .group { display: block; }
@@ -368,9 +380,11 @@
         <div class="brand-sub">Lawn Care &amp; Turf Management</div>
       </div>
     </a>
+    <nav class="head-nav" aria-label="Pages"><a href="about">About</a></nav>
     <div class="head-contact">
       <a class="head-call" href="tel:+12147960394"><span>Call Or Text<i>:</i> </span>214-796-0394</a>
       <a class="head-email" href="mailto:goodsoil19x@gmail.com"><span>Email: </span>goodsoil19x@gmail.com</a>
+      <a class="head-about-sm" href="about">About</a>
     </div>
   </div>
 </header>
@@ -603,6 +617,7 @@
 <footer>
   <div class="wrap">
     <p>Good Soil Lawn Care &amp; Turf Management, Dallas, TX</p>
+    <p class="pages"><a href="./" aria-current="page">Home</a><span class="sep" aria-hidden="true">•</span><a href="about">About</a></p>
     <p><span class="group"><a href="tel:+12147960394">214-796-0394</a><span class="sep" aria-hidden="true">•</span><a href="mailto:goodsoil19x@gmail.com">goodsoil19x@gmail.com</a></span><span class="sep mid" aria-hidden="true">•</span><span class="group">Licensed &amp; Insured<span class="sep" aria-hidden="true">•</span>&copy; <span id="yr">2026</span></span></p>
     <ul class="areas" aria-label="Service areas">
       <li>Dallas</li><li>Fate</li><li>Garland</li><li>Heath</li><li>Lavon</li><li>Mesquite</li><li>Plano</li>
