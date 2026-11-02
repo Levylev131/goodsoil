@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://goodsoiltexas.com/about">
-<!-- PLACEHOLDER PAGE: keep noindex (and out of sitemap.xml) until Jeremy's real answers and photo are in -->
+<!-- PLACEHOLDER PAGE (Q&A style, Jeremy picked mock-up 3 on 2026-11-02): keep noindex (and out of sitemap.xml) until Jeremy's real answers and photo are in -->
 <meta name="robots" content="noindex">
 <title>About Jeremy | Good Soil Lawn Care</title>
 <meta name="description" content="Meet Jeremy Wise, owner of Good Soil — lawn care and turf management in Rowlett, Rockwall, Garland and the Dallas area. Licensed and insured, no contracts.">
@@ -102,8 +102,6 @@
   .horizon { position: absolute; top: -27px; left: 0; width: 100%; height: 28px; }
   section { position: relative; }
   .band { padding: clamp(64px, 9vw, 112px) 0; }
-  .band-turf { background: var(--turf); }
-  .band-clay { background: var(--clay); }
   .band-bedrock { background: var(--bedrock); }
 
   /* ---------- placeholders: gold dashed boxes, easy to spot; remove each as the real content comes in ---------- */
@@ -112,30 +110,9 @@
   .ph-photo { display: grid; place-content: center; text-align: center; aspect-ratio: 4 / 5; padding: 24px; }
   .ph-photo svg { width: 48px; height: 48px; margin: 0 auto 10px; opacity: .7; }
 
-  /* ---------- intro ---------- */
-  .intro { padding: clamp(24px, 5vw, 64px) 0 clamp(64px, 9vw, 112px); }
-  .intro .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  /* ---------- page top ---------- */
   .eyebrow { font-family: var(--label); font-weight: 600; font-size: .95rem; letter-spacing: .16em; text-transform: uppercase; color: var(--sage-pale); margin-bottom: 1rem; }
-  .intro h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); color: var(--linen); }
-  .intro .lede { margin-top: 1.4rem; max-width: 40ch; }
-  .intro .photo { width: 100%; max-width: 420px; justify-self: center; }
-
-  /* ---------- story + facts ---------- */
-  .story .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
-  .story h2 { margin-bottom: 1.6rem; }
-  .story .ph + .ph { margin-top: 14px; }
-  .facts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-  .facts li { padding: 18px 0; border-bottom: 1px solid var(--line); }
-  .facts .k { display: block; font-family: var(--label); font-weight: 600; font-size: .9rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-bottom: 6px; }
-  .facts .v { color: var(--linen); }
-  .facts .ph { display: block; }
-
-  /* ---------- why ---------- */
   .section-head { margin-bottom: clamp(36px, 5vw, 56px); }
-  .why { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 56px; }
-  .why h3 { margin-bottom: .8rem; }
-  .why p { color: var(--linen-dim); }
-  .why svg { width: 40px; height: 40px; color: var(--sage); fill: currentColor; margin-bottom: 14px; }
 
   /* ---------- on the job photos ---------- */
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -169,14 +146,32 @@
 
   /* ---------- responsive ---------- */
   @media (max-width: 860px) {
-    .intro .wrap, .story .wrap { grid-template-columns: 1fr; }
-    .intro .photo { order: -1; max-width: 320px; }
-    .why { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 520px) {
     .gallery { grid-template-columns: 1fr; }
     .cta .btn { flex: 1 1 100%; justify-content: center; }
+  }
+  /* ---------- style 3: Q&A interview (sticky profile card + questions) ---------- */
+  .v3 { padding: clamp(24px, 5vw, 56px) 0 clamp(64px, 9vw, 112px); }
+  .v3 .wrap { display: grid; grid-template-columns: 340px 1fr; gap: clamp(36px, 5vw, 80px); align-items: start; }
+  .v3-card { position: sticky; top: 24px; background: var(--turf); border: 1px solid var(--line); border-radius: 6px; padding: 22px; }
+  .v3-card .ph-photo { aspect-ratio: 1; }
+  .v3-card .name { font-family: var(--display); font-size: 1.8rem; color: var(--linen); margin-top: 18px; line-height: 1.1; }
+  .v3-card .role { font-family: var(--label); font-weight: 600; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage); margin-top: 6px; }
+  .v3-card ul { list-style: none; margin: 18px 0 20px; padding: 0; border-top: 1px solid var(--line); }
+  .v3-card li { display: flex; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: .98rem; }
+  .v3-card li svg { width: 22px; height: 22px; flex: none; color: var(--wheat); fill: currentColor; }
+  .v3-card .btn { width: 100%; justify-content: center; }
+  .v3 h1 { font-size: clamp(2.4rem, 5.4vw, 4rem); color: var(--linen); }
+  .v3 .lede { margin-top: 1.2rem; color: var(--linen-dim); max-width: 52ch; }
+  .v3-list { margin-top: clamp(32px, 5vw, 52px); }
+  .v3-qa { padding: 28px 0; border-top: 1px solid var(--line); }
+  .v3-qa h3 { display: flex; gap: 14px; align-items: baseline; margin-bottom: 14px; color: var(--copper); }
+  .v3-qa h3 span { flex: none; font-family: var(--label); font-weight: 600; font-size: .85rem; letter-spacing: .1em; color: var(--bedrock); background: var(--wheat); border-radius: 3px; padding: 2px 8px; }
+  @media (max-width: 860px) {
+    .v3 .wrap { grid-template-columns: 1fr; }
+    .v3-card { position: static; max-width: 420px; margin: 0 auto; width: 100%; }
   }
 </style>
 </head>
@@ -247,67 +242,36 @@
 </script>
 
 <main>
-  <!-- Every .ph box is a placeholder: swap in Jeremy's answer (Q numbers match the questions texted to him), then delete the box. -->
-  <section class="intro">
+  <!-- Q&A interview layout. Every .ph box is a placeholder: swap in Jeremy's answer (Q numbers match the questions texted to him). -->
+  <section class="v3">
     <div class="wrap">
+      <aside class="v3-card">
+        <div class="ph ph-photo "><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo Of Jeremy · Q10</b>Square, smiling, outside.</div>
+        <p class="name">Jeremy Wise</p>
+        <p class="role">Owner, Good Soil</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-shield"/></svg>Licensed &amp; Insured</li>
+          <li><svg aria-hidden="true"><use href="#i-nocontract"/></svg>No Contracts</li>
+          <li><svg aria-hidden="true"><use href="#leaf"/></svg>Rowlett, Rockwall, Garland, Wylie &amp; Nearby</li>
+        </ul>
+        <a class="btn btn-solid" href="tel:+12147960394"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 214-796-0394</a>
+      </aside>
       <div>
         <p class="eyebrow">About Good Soil</p>
-        <h1>Meet Jeremy Wise</h1>
-        <div class="ph lede"><b>Intro · Q1 + Q2</b>One or two sentences: how long Jeremy has done lawn care and why he started Good Soil.</div>
-      </div>
-      <div class="ph ph-photo photo">
-        <svg aria-hidden="true"><use href="#i-photo"/></svg>
-        <b>Photo Of Jeremy · Q10</b>Outside, with the truck or on the job. About 1200px wide, JPG.
-      </div>
-    </div>
-  </section>
-
-  <section class="band band-turf story">
-    <svg class="horizon" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--turf)" d="M0 28V14c60-6 110 4 170-2s120-10 190-3 130 6 200-1 140-8 210 0 130 7 190 1 110-9 170-4 50 3 70 3v20z"/></svg>
-    <div class="wrap">
-      <div>
-        <h2>How It Started</h2>
-        <div class="ph"><b>His Story · Q2</b>How he got into lawn care and why he started his own business.</div>
-        <div class="ph"><b>Local Roots · Q3</b>Where he's from and how long he's lived in the Rowlett / Dallas area.</div>
-        <div class="ph"><b>Outside Work · Q8 (optional)</b>Family, church, sports, veteran, etc. Only if he wants it on the site.</div>
-      </div>
-      <ul class="facts">
-        <li><span class="k">In Lawn Care Since</span><span class="v ph"><b>Q1</b>Year or number of years</span></li>
-        <li><span class="k">Service Area</span><span class="v">Rowlett, Rockwall, Garland, Wylie and nearby cities</span></li>
-        <li><span class="k">Licenses</span><span class="v ph"><b>Q4</b>e.g. Texas Dept. of Agriculture applicator license, and its type</span></li>
-        <li><span class="k">Team</span><span class="v ph"><b>Q5</b>Just Jeremy, or Jeremy + crew</span></li>
-        <li><span class="k">Coverage</span><span class="v">Licensed &amp; Insured</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="band band-clay">
-    <svg class="horizon" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--clay)" d="M0 28V16c80-8 140 2 210-3s110-8 180-1 150 5 220-2 120-6 200 1 150 6 220 0 60-4 170-1v17z"/></svg>
-    <div class="wrap">
-      <div class="section-head"><h2>Why Good Soil</h2></div>
-      <div class="why">
-        <div>
-          <svg aria-hidden="true"><use href="#leaf"/></svg>
-          <h3>What We Do Differently</h3>
-          <div class="ph"><b>Q6</b>What he does differently from the big lawn companies.</div>
-        </div>
-        <div>
-          <svg aria-hidden="true"><use href="#leaf"/></svg>
-          <h3>Why He Loves The Work</h3>
-          <div class="ph"><b>Q7</b>What he likes most about the work.</div>
-        </div>
-        <div>
-          <svg aria-hidden="true"><use href="#i-shield"/></svg>
-          <h3>Licensed &amp; Insured</h3>
-          <p>You're covered. Ask and we'll send proof of insurance before we ever set foot on your property.</p>
-        </div>
-        <div>
-          <svg aria-hidden="true"><use href="#i-nocontract"/></svg>
-          <h3>No Contracts</h3>
-          <p>We keep your business by doing good work, not by locking you in. Pause or cancel any time.</p>
+        <h1>Getting To Know Jeremy</h1>
+        <p class="lede">We asked Jeremy a few questions so you know who's taking care of your lawn.</p>
+        <div class="v3-list">
+        <div class="v3-qa"><h3><span>Q1</span>How Long Have You Been Doing Lawn Care?</h3><div class="ph"><b>Jeremy's Answer · Q1</b>Year he started, or number of years.</div></div>
+        <div class="v3-qa"><h3><span>Q2</span>How Did You Get Into It, And Why Start Good Soil?</h3><div class="ph"><b>Jeremy's Answer · Q2</b>His story, in his own words.</div></div>
+        <div class="v3-qa"><h3><span>Q3</span>Are You From Around Here?</h3><div class="ph"><b>Jeremy's Answer · Q3</b>Where he's from and how long he's lived in the Rowlett / Dallas area.</div></div>
+        <div class="v3-qa"><h3><span>Q4</span>What Licenses Do You Hold?</h3><div class="ph"><b>Jeremy's Answer · Q4</b>e.g. Texas Dept. of Agriculture applicator license, and its type.</div></div>
+        <div class="v3-qa"><h3><span>Q5</span>Is It Just You, Or Do You Have A Crew?</h3><div class="ph"><b>Jeremy's Answer · Q5</b>Who customers will see on their lawn.</div></div>
+        <div class="v3-qa"><h3><span>Q6</span>What Do You Do Differently From The Big Companies?</h3><div class="ph"><b>Jeremy's Answer · Q6</b>In his own words.</div></div>
+        <div class="v3-qa"><h3><span>Q7</span>What's Your Favorite Part Of The Job?</h3><div class="ph"><b>Jeremy's Answer · Q7</b>What he likes most about the work.</div></div>
+        <div class="v3-qa"><h3><span>Q8</span>What Do You Do When You're Not Working?</h3><div class="ph"><b>Jeremy's Answer · Q8</b>Optional: family, church, sports, veteran, etc. Cut this one if he'd rather not.</div></div>
+        <div class="v3-qa"><h3><span>Q9</span>Anything Customers Should Know Before Hiring You?</h3><div class="ph"><b>Jeremy's Answer · Q9</b>Optional.</div></div>
         </div>
       </div>
-      <div class="ph" style="margin-top:40px"><b>Good To Know · Q9 (optional)</b>Anything he wants customers to know before hiring him.</div>
     </div>
   </section>
 
@@ -317,18 +281,19 @@
       <div class="section-head"><h2>On The Job</h2></div>
       <!-- Real photos only (Jeremy's lawns / Jeremy working). Never stock or AI images presented as his work. -->
       <div class="gallery">
-        <div class="ph ph-photo"><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 1 (optional)</b>Jeremy working, the truck, or a lawn he treats</div>
-        <div class="ph ph-photo"><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 2 (optional)</b>Equipment or Good Soil branding</div>
-        <div class="ph ph-photo"><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 3 (optional)</b>A healthy lawn he takes care of (with the owner's OK)</div>
+        <div class="ph ph-photo "><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 1 (optional)</b>Jeremy working, the truck, or a lawn he treats</div>
+        <div class="ph ph-photo "><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 2 (optional)</b>Equipment or Good Soil branding</div>
+        <div class="ph ph-photo "><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 3 (optional)</b>A healthy lawn he takes care of (with the owner's OK)</div>
       </div>
-
-      <div class="cta" style="margin-top:clamp(64px, 9vw, 112px)">
+      <div style="margin-top:clamp(64px, 9vw, 112px)">
+      <div class="cta">
         <h2>Ready For A Healthier Lawn?</h2>
         <p>Call or text Jeremy, or send the quote form and we'll get back to you within a day.</p>
         <div class="actions">
           <a class="btn btn-solid" href="tel:+12147960394"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 214-796-0394</a>
           <a class="btn btn-ghost" href="./#quote">Get A Free Quote</a>
         </div>
+      </div>
       </div>
     </div>
   </section>
