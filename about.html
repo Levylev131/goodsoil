@@ -157,6 +157,7 @@
   .v3 .wrap { display: grid; grid-template-columns: 340px 1fr; gap: clamp(36px, 5vw, 80px); align-items: start; }
   .v3-card { position: sticky; top: 24px; background: var(--turf); border: 1px solid var(--line); border-radius: 6px; padding: 22px; }
   .v3-card .ph-photo { aspect-ratio: 1; }
+  .v3-card .photo { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
   .v3-card .name { font-family: var(--display); font-size: 1.8rem; color: var(--linen); margin-top: 18px; line-height: 1.1; }
   .v3-card .role { font-family: var(--label); font-weight: 600; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage); margin-top: 6px; }
   .v3-card ul { list-style: none; margin: 18px 0 20px; padding: 0; border-top: 1px solid var(--line); }
@@ -244,11 +245,11 @@
 </script>
 
 <main>
-  <!-- Q&A interview layout. Answers are Jeremy's own (email 2026-11-01), lightly cleaned up; his Q8 note about Iconic Roofing and Custom Contractors left out on purpose (user's call). Still placeholders: his photo (Q10) and the On The Job photos. -->
+  <!-- Q&A interview layout. Answers are Jeremy's own (email 2026-11-01), lightly cleaned up; his Q8 note about Iconic Roofing and Custom Contractors left out on purpose (user's call). Photo = a TEMP pic (images/jeremy.jpg, square crop of 'jeremy about temp pic.jpg'); swap for a real one later and bump ?v=. Still placeholders: the On The Job photos. -->
   <section class="v3">
     <div class="wrap">
       <aside class="v3-card">
-        <div class="ph ph-photo "><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo Of Jeremy · Q10</b>Square, smiling, outside.</div>
+        <img class="photo" src="images/jeremy.jpg?v=1" width="800" height="800" alt="Jeremy Wise, owner of Good Soil">
         <p class="name">Jeremy Wise</p>
         <p class="role">Owner, Good Soil</p>
         <ul>
