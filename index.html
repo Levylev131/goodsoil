@@ -18,7 +18,7 @@
 <meta property="og:title" content="Good Soil Lawn Care | Dallas">
 <meta property="og:description" content="Fertilization, weed control, fire ant control, tree and shrub care, insect and disease control, and aeration. Licensed and insured, no contracts. Call or text 214-796-0394.">
 <meta property="og:url" content="https://goodsoiltexas.com/">
-<meta property="og:image" content="https://goodsoiltexas.com/images/og-image.png?v=4">
+<meta property="og:image" content="https://goodsoiltexas.com/images/og-image.png?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Good Soil logo: a sprout in a mound of soil, with the words Healthy Soil. Healthy Lawn.">
@@ -81,14 +81,13 @@
     --turf: #222c22;
     --wheat: #d2bd72;
 
-    --copper: #c89d76;
     --copper-deep: #a97d57;
-    --gold: #bc9c5e;   /* brand gold = the logo's rays + mound (2026-11-06); buttons use it */
+    --gold: #bc9c5e;   /* brand gold = the logo's rays + mound (2026-11-06); replaced copper everywhere (buttons, headings, name, links, badges) */
     --sage: #88946f;
     --sage-pale: #b3bb9c;
     --linen: #ece2d4;
     --linen-dim: #b9ab99;
-    --line: rgba(200, 157, 118, 0.22);
+    --line: rgba(188, 156, 94, 0.22);
 
     --display: "Marcellus", "Trajan Pro", Georgia, serif;
     --label: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
@@ -116,7 +115,7 @@
   .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
 
   h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.12; margin: 0; text-wrap: balance; }
-  h2 { font-size: clamp(2rem, 4.2vw, 2.9rem); color: var(--copper); }
+  h2 { font-size: clamp(2rem, 4.2vw, 2.9rem); color: var(--gold); }
   h3 { font-size: 1.4rem; color: var(--linen); }
   p { margin: 0; }
 
@@ -140,23 +139,23 @@
   .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .brand { display: flex; align-items: center; gap: clamp(12px, 1.8vw, 20px); text-decoration: none; }
   .brand svg { height: clamp(56px, 7vw, 84px); width: auto; flex: none; }
-  .brand-name { font-family: var(--display); font-size: clamp(1.4rem, 2.6vw, 2rem); letter-spacing: .14em; color: var(--copper); line-height: 1; }
+  .brand-name { font-family: var(--display); font-size: clamp(1.4rem, 2.6vw, 2rem); letter-spacing: .14em; color: var(--gold); line-height: 1; }
   .brand-sub { font-family: var(--label); font-size: clamp(.86rem, 1.2vw, .98rem); letter-spacing: .12em; color: var(--sage); margin-top: 8px; white-space: nowrap; }
   .head-call { font-family: var(--label); font-weight: 600; font-size: clamp(.92rem, 1.6vw, 1.3rem); color: var(--linen); text-decoration: none; white-space: nowrap; }
   .head-call span { color: var(--linen-dim); font-weight: 500; }
-  .head-call:hover { color: var(--copper); }
+  .head-call:hover { color: var(--gold); }
   .head-call i { font-style: normal; }
   .head-contact { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
   .head-email { font-family: var(--label); font-weight: 500; font-size: clamp(.92rem, 1.6vw, 1.3rem); color: var(--linen); text-decoration: none; white-space: nowrap; }
   .head-email span { color: var(--linen-dim); }
-  .head-email:hover { color: var(--copper); }
+  .head-email:hover { color: var(--gold); }
   /* About link: its own button beside the contact lines on computers; a small line under the number in the phone-style header.
      margin-left:auto parks it next to the contact lines; padding-right (not margin) so the fit script counts the gap */
   .head-nav { margin-left: auto; padding-right: clamp(14px, 2.4vw, 32px); }
   .head-nav a, .head-about-sm { font-family: var(--label); font-weight: 600; color: var(--linen); text-decoration: none; white-space: nowrap; }
   .head-nav a { display: inline-block; font-size: clamp(.92rem, 1.4vw, 1.15rem); letter-spacing: .04em; padding: .35em 1em; border: 1px solid var(--line); border-radius: 3px; }
-  .head-nav a:hover, .head-about-sm:hover { color: var(--copper); border-color: var(--copper); }
-  .head-nav a[aria-current] { color: var(--copper); }
+  .head-nav a:hover, .head-about-sm:hover { color: var(--gold); border-color: var(--gold); }
+  .head-nav a[aria-current] { color: var(--gold); }
   .head-about-sm { display: none; }
   .site-head.compact .head-nav { display: none; }
   .site-head.compact .head-about-sm { display: block; align-self: center; font-size: .72rem; letter-spacing: .04em; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line); margin-top: 2px; }
@@ -243,13 +242,13 @@
   .contact .wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
   .contact-intro p { color: var(--linen-dim); margin-top: 1.2rem; max-width: 36ch; }
   .big-phone { display: inline-block; margin-top: 2rem; font-family: var(--label); font-weight: 600; font-size: clamp(2rem, 4vw, 2.6rem); letter-spacing: .02em; color: var(--linen); text-decoration: none; line-height: 1.1; }
-  .big-phone:hover { color: var(--copper); }
+  .big-phone:hover { color: var(--gold); }
   .contact-intro .phone-note { font-family: var(--label); color: var(--sage-pale); font-size: 1rem; margin-top: .35rem; }
-  .contact-intro .email { display: inline-block; margin-top: 1.1rem; color: var(--copper); font-family: var(--label); font-size: 1.15rem; text-decoration-color: rgba(200,157,118,.4); text-underline-offset: 4px; }
+  .contact-intro .email { display: inline-block; margin-top: 1.1rem; color: var(--gold); font-family: var(--label); font-size: 1.15rem; text-decoration-color: rgba(188, 156, 94, .4); text-underline-offset: 4px; }
   .contact-intro .email:hover { color: var(--linen); }
   .contact-intro .area { margin-top: 1.4rem; }
   .owner { display: flex; align-items: center; gap: 14px; margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--line); max-width: 360px; }
-  .owner-initials { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--subsoil); border: 1px solid var(--line); font-family: var(--display); color: var(--copper); font-size: 1.15rem; flex: none; }
+  .owner-initials { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--subsoil); border: 1px solid var(--line); font-family: var(--display); color: var(--gold); font-size: 1.15rem; flex: none; }
   .owner strong { display: block; font-family: var(--label); font-weight: 600; font-size: 1.1rem; }
   .owner span { color: var(--linen-dim); font-size: .95rem; }
 
@@ -286,7 +285,7 @@
   input.is-invalid, input.is-invalid:focus { border-color: #e8a184; box-shadow: 0 0 0 3px rgba(232,161,132,.18); }
   .form-status.is-error { border-left-color: #e8a184; background: rgba(232,161,132,.1); }
   .form-status { grid-column: 1 / -1; padding: 14px 16px; border-left: 3px solid var(--sage); background: rgba(136,148,111,.12); color: var(--linen); }
-  .form-status a { color: var(--copper); }
+  .form-status a { color: var(--gold); }
 
   /* ---------- footer ---------- */
   .motto { background: var(--wheat); color: var(--bedrock); padding: 18px 0; text-align: center; }
@@ -298,7 +297,7 @@
   footer .group { white-space: nowrap; }
   footer .sep { color: var(--wheat); opacity: .55; margin: 0 .7em; font-size: .8em; }
   footer .pages a { font-family: var(--label); font-weight: 600; letter-spacing: .06em; color: var(--linen); text-decoration: none; }
-  footer .pages a:hover, footer .pages a[aria-current] { color: var(--copper); }
+  footer .pages a:hover, footer .pages a[aria-current] { color: var(--gold); }
   /* phones: phone + email on one line, Licensed & Insured + year on the next, no stray dot between */
   @media (max-width: 640px) {
     footer .group { display: block; }
@@ -499,7 +498,7 @@
           <div><h3>Weed Control</h3><p>Pre-emergent treatments to stop weeds before they sprout, plus spot treatment for the ones that sneak through.</p></div>
         </li>
         <li>
-          <svg class="badge" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/><g stroke="var(--copper)" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M13 23l-3-5-3-1M13 25l-3 4M20 22l-2-6-4-2M22 22l1-6 3-3M20 26l-3 5-1 4M22 26l2 5 4 3M30 26l3 4 1 5"/></g><g fill="var(--copper)"><ellipse cx="13.5" cy="24" rx="3" ry="2.6"/><ellipse cx="21" cy="24" rx="3.6" ry="2.4"/><ellipse cx="31" cy="24.5" rx="6.5" ry="4.2"/></g></svg>
+          <svg class="badge" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/><g stroke="var(--gold)" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M13 23l-3-5-3-1M13 25l-3 4M20 22l-2-6-4-2M22 22l1-6 3-3M20 26l-3 5-1 4M22 26l2 5 4 3M30 26l3 4 1 5"/></g><g fill="var(--gold)"><ellipse cx="13.5" cy="24" rx="3" ry="2.6"/><ellipse cx="21" cy="24" rx="3.6" ry="2.4"/><ellipse cx="31" cy="24.5" rx="6.5" ry="4.2"/></g></svg>
           <div><h3>Fire Ant Control</h3><p>Treating mounds and the yard around them so fire ants stay out of the spaces your family and pets use.</p></div>
         </li>
         <li>
@@ -507,7 +506,7 @@
           <div><h3>Tree &amp; Shrub</h3><p>Feeding and protecting the trees, shrubs, and beds around your lawn so the whole yard stays healthy.</p></div>
         </li>
         <li>
-          <svg class="badge" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/><path d="M24 10l-10 4v8c0 7 4.3 11.6 10 14 5.7-2.4 10-7 10-14v-8z" fill="none" stroke="var(--copper)" stroke-width="1.6" stroke-linejoin="round"/><path d="M18 30c0-8 5-13 12-13 0 8-5 13-12 13z" fill="var(--sage-pale)"/><path d="M17 31l9-10" stroke="var(--turf)" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <svg class="badge" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/><path d="M24 10l-10 4v8c0 7 4.3 11.6 10 14 5.7-2.4 10-7 10-14v-8z" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linejoin="round"/><path d="M18 30c0-8 5-13 12-13 0 8-5 13-12 13z" fill="var(--sage-pale)"/><path d="M17 31l9-10" stroke="var(--turf)" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div><h3>Insect &amp; Disease Control</h3><p>Spotting and treating grubs, chinch bugs, brown patch, and other problems before they spread through the lawn.</p></div>
         </li>
         <li>
