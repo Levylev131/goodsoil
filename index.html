@@ -305,6 +305,9 @@
     footer .sep.mid { display: none; }
   }
   @media (max-width: 360px) { footer p { font-size: .84rem; } }
+  /* Bible verse line (2026-11-06, KJV = public domain, no credit line needed) */
+  footer .verse { font-family: var(--display); font-size: .95rem; color: var(--linen-dim); max-width: 60ch; margin: 0 auto 10px; }
+  footer .verse cite { display: block; font-family: var(--label); font-style: normal; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-top: 4px; }
   /* same 14 cities as the Google profile and the business info in <head> */
   footer .areas { flex-basis: 100%; display: flex; flex-wrap: wrap; justify-content: center; list-style: none; margin: 0; padding: 0; opacity: .5; }
   footer .areas li { font-size: .6rem; line-height: 1.6; color: var(--sage); }
@@ -616,6 +619,7 @@
 
 <footer>
   <div class="wrap">
+    <p class="verse">“And other fell on good ground, and sprang up, and bare fruit an hundredfold.”<cite>Luke 8:8 (KJV)</cite></p>
     <p>Good Soil Lawn Care &amp; Turf Management, Dallas, TX</p>
     <p class="pages"><a href="./" aria-current="page">Home</a><span class="sep" aria-hidden="true">•</span><a href="about">About</a></p>
     <p><span class="group"><a href="tel:+12147960394">214-796-0394</a><span class="sep" aria-hidden="true">•</span><a href="mailto:goodsoil19x@gmail.com">goodsoil19x@gmail.com</a></span><span class="sep mid" aria-hidden="true">•</span><span class="group">Licensed &amp; Insured<span class="sep" aria-hidden="true">•</span>&copy; <span id="yr">2026</span></span></p>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://goodsoiltexas.com/about">
-<!-- PLACEHOLDER PAGE (Q&A style, Jeremy picked mock-up 3 on 2026-11-02): answers are in (2026-11-02); keep noindex (and out of sitemap.xml) until his photo is in -->
+<!-- PLACEHOLDER PAGE (Q&A style, Jeremy picked mock-up 3 on 2026-11-02): answers are in (2026-11-02), real photos + verse in (2026-11-06); keep noindex (and out of sitemap.xml) until the user says push it live -->
 <meta name="robots" content="noindex">
 <title>About Jeremy | Good Soil Lawn Care</title>
 <meta name="description" content="Meet Jeremy Wise, owner of Good Soil — lawn care and turf management in Rowlett, Rockwall, Garland and the Dallas area. Licensed and insured, no contracts.">
@@ -117,6 +117,7 @@
   /* ---------- on the job photos ---------- */
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .gallery .ph-photo { aspect-ratio: 4 / 3; }
+  .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
 
   /* ---------- call to action ---------- */
   .cta { text-align: center; }
@@ -140,6 +141,8 @@
     footer .sep.mid { display: none; }
   }
   @media (max-width: 360px) { footer p { font-size: .84rem; } }
+  footer .verse { font-family: var(--display); font-size: .95rem; color: var(--linen-dim); max-width: 60ch; margin: 0 auto 10px; }
+  footer .verse cite { display: block; font-family: var(--label); font-style: normal; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-top: 4px; }
   footer .areas { flex-basis: 100%; display: flex; flex-wrap: wrap; justify-content: center; list-style: none; margin: 0; padding: 0; opacity: .5; }
   footer .areas li { font-size: .6rem; line-height: 1.6; color: var(--sage); }
   footer .areas li + li::before { content: "·"; margin: 0 .5em; }
@@ -172,6 +175,8 @@
   .v3-qa h3 span { flex: none; font-family: var(--label); font-weight: 600; font-size: .85rem; letter-spacing: .1em; color: var(--bedrock); background: var(--wheat); border-radius: 3px; padding: 2px 8px; }
   .v3-qa p { color: var(--linen-dim); max-width: 62ch; }
   .v3-qa p + p { margin-top: .9rem; }
+  .v3-name blockquote { margin: 1.2rem 0 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--wheat); font-family: var(--display); font-size: 1.25rem; line-height: 1.5; color: var(--linen); max-width: 52ch; }
+  .v3-name blockquote cite { display: block; margin-top: 10px; font-family: var(--label); font-style: normal; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); }
   @media (max-width: 860px) {
     .v3 .wrap { grid-template-columns: 1fr; }
     .v3-card { position: static; max-width: 420px; margin: 0 auto; width: 100%; }
@@ -245,11 +250,11 @@
 </script>
 
 <main>
-  <!-- Q&A interview layout. Answers are Jeremy's own (email 2026-11-01), lightly cleaned up; his Q8 note about Iconic Roofing and Custom Contractors left out on purpose (user's call). Photo = a TEMP pic (images/jeremy.jpg, square crop of 'jeremy about temp pic.jpg'); swap for a real one later and bump ?v=. Still placeholders: the On The Job photos. -->
+  <!-- Q&A interview layout. Answers are Jeremy's own (email 2026-11-01), lightly cleaned up; his Q8 note about Iconic Roofing and Custom Contractors left out on purpose (user's call). Photo (2026-11-06) = Jeremy's work selfie by his truck (Nov 5 photos, 43FD3F8E), square crop; bump ?v= on change. On The Job = his Nov 5 photos (truck + 2 lawns he treats), plate, house numbers and a child's name blurred. Verse = KJV (public domain), Jeremy hadn't picked yet (user's call 2026-11-06). -->
   <section class="v3">
     <div class="wrap">
       <aside class="v3-card">
-        <img class="photo" src="images/jeremy.jpg?v=1" width="800" height="800" alt="Jeremy Wise, owner of Good Soil">
+        <img class="photo" src="images/jeremy.jpg?v=2" width="800" height="800" alt="Jeremy Wise, owner of Good Soil">
         <p class="name">Jeremy Wise</p>
         <p class="role">Owner, Good Soil</p>
         <ul>
@@ -273,6 +278,7 @@
         <div class="v3-qa"><h3><span>Q7</span>What's Your Favorite Part Of The Job?</h3><p>What I enjoy most about my work is being free to make my own schedule and decisions. I love the joy I feel interacting with the best customers, the ones I get to choose to do business with. I enjoy being outside and free to move around as I work.</p></div>
         <div class="v3-qa"><h3><span>Q8</span>What Do You Do When You're Not Working?</h3><p>The most important thing to me is my faith in Jesus Christ. I'm a Christian, and this business is run to represent Christ to the best of my ability and for His glory.</p><p>Being a father and a family man is extremely important to me. Outside of work, I enjoy coaching my daughter's soccer team and being the best husband and father I can be.</p></div>
         <div class="v3-qa"><h3><span>Q9</span>Anything Customers Should Know Before Hiring You?</h3><p>There are no contracts with me. You can cancel anytime.</p></div>
+        <div class="v3-qa v3-name"><h3>Why The Name Good Soil?</h3><p>The name comes from the parable of the soils that Jesus teaches in Luke 8.</p><blockquote>“But that on the good ground are they, which in an honest and good heart, having heard the word, keep it, and bring forth fruit with patience.”<cite>Luke 8:15 (KJV)</cite></blockquote></div>
         </div>
       </div>
     </div>
@@ -284,9 +290,9 @@
       <div class="section-head"><h2>On The Job</h2></div>
       <!-- Real photos only (Jeremy's lawns / Jeremy working). Never stock or AI images presented as his work. -->
       <div class="gallery">
-        <div class="ph ph-photo "><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 1 (optional)</b>Jeremy working, the truck, or a lawn he treats</div>
-        <div class="ph ph-photo "><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 2 (optional)</b>Equipment or Good Soil branding</div>
-        <div class="ph ph-photo "><svg aria-hidden="true"><use href="#i-photo"/></svg><b>Photo 3 (optional)</b>A healthy lawn he takes care of (with the owner's OK)</div>
+        <img src="images/about-truck.jpg?v=1" width="1600" height="1200" loading="lazy" alt="Good Soil's spray truck parked at a customer's home">
+        <img src="images/about-lawn-1.jpg?v=1" width="1600" height="1200" loading="lazy" alt="A thick, green front lawn that Good Soil takes care of">
+        <img src="images/about-lawn-2.jpg?v=1" width="1600" height="1200" loading="lazy" alt="A healthy front lawn that Good Soil treats">
       </div>
       <div style="margin-top:clamp(64px, 9vw, 112px)">
       <div class="cta">
@@ -308,6 +314,7 @@
 
 <footer>
   <div class="wrap">
+    <p class="verse">“And other fell on good ground, and sprang up, and bare fruit an hundredfold.”<cite>Luke 8:8 (KJV)</cite></p>
     <p>Good Soil Lawn Care &amp; Turf Management, Dallas, TX</p>
     <p class="pages"><a href="./">Home</a><span class="sep" aria-hidden="true">•</span><a href="about" aria-current="page">About</a></p>
     <p><span class="group"><a href="tel:+12147960394">214-796-0394</a><span class="sep" aria-hidden="true">•</span><a href="mailto:goodsoil19x@gmail.com">goodsoil19x@gmail.com</a></span><span class="sep mid" aria-hidden="true">•</span><span class="group">Licensed &amp; Insured<span class="sep" aria-hidden="true">•</span>&copy; <span id="yr">2026</span></span></p>
