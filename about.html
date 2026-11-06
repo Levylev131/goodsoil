@@ -141,13 +141,10 @@
     footer .sep.mid { display: none; }
   }
   @media (max-width: 360px) { footer p { font-size: .84rem; } }
-  footer .verse { font-family: var(--display); font-size: .95rem; color: var(--linen-dim); max-width: 60ch; margin: 4px auto 14px; padding-bottom: 18px; position: relative; }
-  /* set the verse apart from the contact lines: a short gold rule with a dot in the middle */
-  footer .verse::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 140px; height: 7px; transform: translateX(-50%);
-    background: radial-gradient(circle, var(--gold) 0 2.5px, transparent 3px) center / 7px 7px no-repeat,
-                linear-gradient(var(--gold), var(--gold)) left center / 60px 1px no-repeat,
-                linear-gradient(var(--gold), var(--gold)) right center / 60px 1px no-repeat; opacity: .6; }
-  footer .verse cite { display: block; font-family: var(--label); font-style: normal; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-top: 4px; }
+  /* Bible verse in its own darker band between the motto strip and the footer (2026-11-06) */
+  .verse-band { background: #121410; border-top: 1px solid var(--line); padding: 28px var(--gutter) 26px; text-align: center; }
+  .verse-band .verse { font-family: var(--display); font-size: 1.05rem; line-height: 1.55; color: var(--linen); max-width: 60ch; margin: 0 auto; }
+  .verse-band .verse cite { display: block; font-family: var(--label); font-style: normal; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-top: 6px; }
   footer .esv { font-size: .62rem; line-height: 1.5; color: var(--sage); opacity: .7; max-width: 80ch; margin: 6px auto 0; }
   footer .areas { flex-basis: 100%; display: flex; flex-wrap: wrap; justify-content: center; list-style: none; margin: 0; padding: 0; opacity: .5; }
   footer .areas li { font-size: .6rem; line-height: 1.6; color: var(--sage); }
@@ -319,9 +316,12 @@
   <p><svg viewBox="0 0 28 34" aria-hidden="true"><path d="M14 33V14" stroke="#3e5a3a" stroke-width="2" stroke-linecap="round"/><g fill="#3e5a3a"><use href="#leaf" x="10" y="0" width="8" height="15"/><use href="#leaf" x="5" y="7" width="8" height="15" transform="rotate(-60 9 22)"/><use href="#leaf" x="15" y="7" width="8" height="15" transform="rotate(60 19 22)"/></g></svg>Local. Reliable. Results That Grow.<svg viewBox="0 0 28 34" aria-hidden="true"><path d="M14 33V14" stroke="#3e5a3a" stroke-width="2" stroke-linecap="round"/><g fill="#3e5a3a"><use href="#leaf" x="10" y="0" width="8" height="15"/><use href="#leaf" x="5" y="7" width="8" height="15" transform="rotate(-60 9 22)"/><use href="#leaf" x="15" y="7" width="8" height="15" transform="rotate(60 19 22)"/></g></svg></p>
 </div>
 
+<section class="verse-band" aria-label="Bible verse">
+  <p class="verse">“And some fell into good soil and grew and yielded a hundredfold.”<cite>Luke 8:8 (ESV)</cite></p>
+</section>
+
 <footer>
   <div class="wrap">
-    <p class="verse">“And some fell into good soil and grew and yielded a hundredfold.”<cite>Luke 8:8 (ESV)</cite></p>
     <p>Good Soil Lawn Care &amp; Turf Management, Dallas, TX</p>
     <p class="pages"><a href="./">Home</a><span class="sep" aria-hidden="true">•</span><a href="about" aria-current="page">About</a></p>
     <p><span class="group"><a href="tel:+12147960394">214-796-0394</a><span class="sep" aria-hidden="true">•</span><a href="mailto:goodsoil19x@gmail.com">goodsoil19x@gmail.com</a></span><span class="sep mid" aria-hidden="true">•</span><span class="group">Licensed &amp; Insured<span class="sep" aria-hidden="true">•</span>&copy; <span id="yr">2026</span></span></p>
