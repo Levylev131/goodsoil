@@ -141,7 +141,12 @@
     footer .sep.mid { display: none; }
   }
   @media (max-width: 360px) { footer p { font-size: .84rem; } }
-  footer .verse { font-family: var(--display); font-size: .95rem; color: var(--linen-dim); max-width: 60ch; margin: 0 auto 10px; }
+  footer .verse { font-family: var(--display); font-size: .95rem; color: var(--linen-dim); max-width: 60ch; margin: 4px auto 14px; padding-bottom: 18px; position: relative; }
+  /* set the verse apart from the contact lines: a short gold rule with a dot in the middle */
+  footer .verse::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 140px; height: 7px; transform: translateX(-50%);
+    background: radial-gradient(circle, var(--gold) 0 2.5px, transparent 3px) center / 7px 7px no-repeat,
+                linear-gradient(var(--gold), var(--gold)) left center / 60px 1px no-repeat,
+                linear-gradient(var(--gold), var(--gold)) right center / 60px 1px no-repeat; opacity: .6; }
   footer .verse cite { display: block; font-family: var(--label); font-style: normal; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-top: 4px; }
   footer .esv { font-size: .62rem; line-height: 1.5; color: var(--sage); opacity: .7; max-width: 80ch; margin: 6px auto 0; }
   footer .areas { flex-basis: 100%; display: flex; flex-wrap: wrap; justify-content: center; list-style: none; margin: 0; padding: 0; opacity: .5; }
