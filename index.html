@@ -305,12 +305,11 @@
     footer .sep.mid { display: none; }
   }
   @media (max-width: 360px) { footer p { font-size: .84rem; } }
-  /* Bible verse in its own darker band between the motto strip and the footer (2026-11-06). ESV, so Crossway's full notice (footer .esv) must stay on every page that quotes it */
+  /* Bible verse in its own darker band between the motto strip and the footer (2026-11-06). BSB = public domain, no credit line needed */
   .verse-band { background: #20231a; border-top: 1px solid var(--line); padding: 20px var(--gutter) 18px; text-align: center; }  /* #20231a = the brand olive, a shade darker */
   .verse-band .verse { font-family: var(--display); font-size: 1.05rem; line-height: 1.55; color: var(--linen); max-width: 60ch; margin: 0 auto; }
   .verse-band .verse cite { display: block; font-family: var(--label); font-style: normal; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-top: 6px; }
   /* same 14 cities as the Google profile and the business info in <head> */
-  footer .esv { font-size: .62rem; line-height: 1.5; color: var(--sage); opacity: .7; max-width: 80ch; margin: 6px auto 0; }
   footer .areas { flex-basis: 100%; display: flex; flex-wrap: wrap; justify-content: center; list-style: none; margin: 0; padding: 0; opacity: .5; }
   footer .areas li { font-size: .6rem; line-height: 1.6; color: var(--sage); }
   footer .areas li + li::before { content: "·"; margin: 0 .5em; }
@@ -622,7 +621,7 @@
 </div>
 
 <section class="verse-band" aria-label="Bible verse">
-  <p class="verse">“And some fell into good soil and grew and yielded a hundredfold.”<cite>Luke 8:8 (ESV)</cite></p>
+  <p class="verse">“Still other seed fell on good soil, where it sprang up and produced a crop—a hundredfold.”<cite>Luke 8:8 (BSB)</cite></p>
 </section>
 
 <footer>
@@ -634,7 +633,6 @@
       <li>Dallas</li><li>Fate</li><li>Garland</li><li>Heath</li><li>Lavon</li><li>Mesquite</li><li>Plano</li>
       <li>Richardson</li><li>Rockwall</li><li>Rowlett</li><li>Royse City</li><li>Sachse</li><li>Sunnyvale</li><li>Wylie</li>
     </ul>
-    <p class="esv">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
   </div>
 </footer>
 
