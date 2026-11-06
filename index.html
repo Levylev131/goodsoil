@@ -83,6 +83,7 @@
 
     --copper: #c89d76;
     --copper-deep: #a97d57;
+    --gold: #bc9c5e;   /* brand gold = the logo's rays + mound (2026-11-06); buttons use it */
     --sage: #88946f;
     --sage-pale: #b3bb9c;
     --linen: #ece2d4;
@@ -124,13 +125,13 @@
     display: inline-flex; align-items: center; gap: .6em;
     font-family: var(--label); font-weight: 600; font-size: 1.125rem; letter-spacing: .02em;
     text-decoration: none; padding: .8em 1.4em; border-radius: 3px;
-    border: 1.5px solid var(--copper); cursor: pointer;
+    border: 1.5px solid var(--gold); cursor: pointer;
     transition: background-color .15s, color .15s;
   }
-  .btn-solid { background: var(--copper); color: var(--bedrock); }
+  .btn-solid { background: var(--gold); color: var(--bedrock); }
   .btn-solid:hover { background: var(--linen); border-color: var(--linen); }
-  .btn-ghost { background: transparent; color: var(--copper); }
-  .btn-ghost:hover { background: rgba(200,157,118,.12); }
+  .btn-ghost { background: transparent; color: var(--gold); }
+  .btn-ghost:hover { background: rgba(188,156,94,.12); }
   .btn svg { width: 1.1em; height: 1.1em; }
 
   /* ---------- header ---------- */
