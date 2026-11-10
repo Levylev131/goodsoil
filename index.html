@@ -251,6 +251,9 @@
   .owner-initials { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--subsoil); border: 1px solid var(--line); font-family: var(--display); color: var(--gold); font-size: 1.15rem; flex: none; }
   .owner strong { display: block; font-family: var(--label); font-weight: 600; font-size: 1.1rem; }
   .owner span { color: var(--linen-dim); font-size: .95rem; }
+  .review { margin-top: 1.8rem; }
+  .contact-intro .review-note { font-family: var(--label); color: var(--sage-pale); font-size: 1rem; margin: 0 0 .6rem; }
+  .review .btn { font-size: 1rem; padding: .65em 1.2em; }
 
   form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
   .field { display: grid; gap: 6px; }
@@ -352,6 +355,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="leaf" viewBox="-14 -52 28 54"><path d="M0 0C13-10 13-36 0-50C-13-36-13-10 0 0Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.8 2.8 5.7 6.3.9-4.6 4.4 1.1 6.3L12 17.1l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
     <symbol id="i-shield" viewBox="0 0 32 32"><path d="M16 3 5 7v8c0 7 4.7 11.8 11 14 6.3-2.2 11-7 11-14V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m11 16 3.5 3.5L21.5 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-nocontract" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.5 9h7l3 3v11h-10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 25 25 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
@@ -559,6 +563,11 @@
         <div class="owner">
           <div class="owner-initials" aria-hidden="true">JW</div>
           <div><strong>Jeremy Wise</strong><span>Owner, Good Soil</span></div>
+        </div>
+        <!-- Google review link (2026-11-10, from the Business Profile's "Ask for reviews") -->
+        <div class="review">
+          <p class="review-note">Already A Customer?</p>
+          <a class="btn btn-ghost" href="https://g.page/r/CT6pL8mDpZtxEBM/review" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-star"/></svg>Leave A Google Review</a>
         </div>
       </div>
 
