@@ -129,6 +129,11 @@
   .motto { background: var(--gold); color: var(--bedrock); padding: 18px 0; text-align: center; }
   .motto p { display: inline-flex; align-items: center; gap: 14px; font-family: var(--label); font-weight: 600; font-size: clamp(1.05rem, 2.4vw, 1.35rem); letter-spacing: .16em; }
   .motto svg { width: 18px; height: 22px; flex: none; }
+  /* phones (2026-11-10): pull the two sprouts in from the screen edges (tighter gap + letter spacing; the -.12em cancels the space letter-spacing leaves after the last letter) */
+  @media (max-width: 640px) {
+    .motto p { gap: 7px; letter-spacing: .12em; }
+    .motto p svg:last-child { margin-left: -.12em; }
+  }
   footer { background: var(--bedrock); border-top: 1px solid var(--line); padding: 20px 0 24px; }
   footer .wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
   footer p { color: var(--linen-dim); font-size: .9rem; line-height: 1.5; }
