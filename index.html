@@ -292,6 +292,8 @@
 
   /* ---------- footer ---------- */
   /* brand-gold strip with dark words (user, 2026-11-06; was bright wheat, then tried dark) */
+  /* Google "Read more" links add #:~:text=... and Chrome highlights that text in lilac; hide that highlight (2026-11-10, user's call) */
+  ::target-text { background: transparent; color: inherit; }
   .motto { background: var(--gold); color: var(--bedrock); padding: 18px 0; text-align: center; }
   .motto p { display: inline-flex; align-items: center; gap: 14px; font-family: var(--label); font-weight: 600; font-size: clamp(1.05rem, 2.4vw, 1.35rem); letter-spacing: .16em; }
   .motto svg { width: 18px; height: 22px; flex: none; }
