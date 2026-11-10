@@ -1,0 +1,9 @@
+# Security headers for Cloudflare Pages (goodsoiltexas.com). Added 2026-11-10.
+# GitHub Pages (levihannon.com/goodsoil) ignores this file; check it on test.goodsoil.pages.dev instead.
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
